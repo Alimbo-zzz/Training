@@ -1,0 +1,80 @@
+.intro {
+	background: $blue-dark;
+	color: $white;
+	padding-bottom: 8em;
+	padding-top: 1em;
+	height: clamp(850px, 100vh, 1200px);
+	position: relative;
+	display: grid;
+	grid-template-rows: min-content 1fr;
+
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 60% 1fr;
+		position: relative;
+		z-index: 2;
+		align-self: center;
+
+		@media(max-width: $tablet) {
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			gap: 3em;
+			padding-top: 4em;
+		}
+	}
+
+	&__title {
+		font-size: clamp(25px, 4vw, 72px);
+		line-height: 1.2;
+		color: $white;
+	}
+
+	&__text {
+		font-size: clamp(18px, 2vw, 23px);
+		color: $gray;
+		max-width: 500px;
+		grid-row: 2;
+		margin-bottom: 3em;
+
+		@media(max-width: $tablet) {
+			order: 1;
+			margin-bottom: 0;
+		}
+	}
+
+	[data-btn] {
+		grid-row: 3;
+		max-width: 400px;
+
+		@media(max-width: $tablet) {
+			order: 2;
+		}
+	}
+
+	&__preview {
+		grid-row: 1/4;
+	}
+
+	&__decor {
+		position: absolute;
+		left: 0;
+		top: 0;
+		transform: translate(-30%, -30%);
+	}
+
+
+	[data-decor='circle'] {
+		position: absolute;
+		top: 0;
+		left: 40%;
+		width: 80px;
+
+		@media(max-width: $tablet) {
+			display: none;
+		}
+	}
+}

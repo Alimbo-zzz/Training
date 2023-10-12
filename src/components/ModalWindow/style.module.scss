@@ -1,0 +1,109 @@
+.modal {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba($color: #310D4D, $alpha: 0.7);
+	backdrop-filter: blur(10px);
+	z-index: 100;
+	min-width: $min-width;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	transition: 0.5s;
+	pointer-events: none;
+	user-select: none;
+	opacity: 0;
+
+	&[data-open='true'] {
+		opacity: 1;
+		pointer-events: auto;
+		user-select: auto;
+	}
+
+
+	&__title {
+		color: $white;
+		font-size: clamp(23px, 4vw, 45px);
+		font-weight: 600;
+		white-space: nowrap;
+	}
+
+	&__text {
+		color: $gray;
+		font-size: clamp(18px, 3vw, 21px);
+	}
+
+
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+		max-width: 650px;
+		padding: 4em;
+		padding-right: 6em;
+		position: relative;
+		background: rgba($color: $blue-gray, $alpha: 0.8);
+		backdrop-filter: blur(10px);
+		border-radius: 1em;
+		position: relative;
+		z-index: 120;
+
+		transition: 0.3s;
+		pointer-events: none;
+		user-select: none;
+		opacity: 0;
+		transform: scale(0);
+
+		&[data-open='true'] {
+			transition: 1s;
+			opacity: 1;
+			pointer-events: auto;
+			user-select: auto;
+			transform: scale(1);
+		}
+
+		@media(max-width: $tablet) {
+			margin: 10px;
+			padding: 4em clamp(1em, 5vw, 2em);
+		}
+	}
+
+	&__close {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		background: none;
+		border: none;
+		color: $white;
+		font-size: clamp(2.5em, 5vw, 3em);
+		line-height: 0;
+		width: 1.1em;
+		aspect-ratio: 1/1;
+		cursor: pointer;
+		transition: 0.2s;
+
+		&:hover {
+			color: $green;
+		}
+	}
+
+
+
+	&__inp {
+		font-size: clamp(18px, 5vw, 24px);
+		padding: 0.3em 1em;
+		border-radius: 0.5em;
+		border: 3px solid transparent;
+		transition: 0.3s;
+
+		&:focus {
+			border-color: $green;
+		}
+	}
+
+}

@@ -1,0 +1,70 @@
+.card {
+	position: relative;
+	transition: 0.2s;
+
+	&:hover {
+
+		.card__content {
+			transform: skew(2deg);
+		}
+
+		.card__decor {
+			transform: translate(-50%, 10%);
+		}
+	}
+
+	&__content {
+		transition: inherit;
+		background: $blue-gray;
+		border-radius: 1em;
+		color: $white;
+		aspect-ratio: 1/1;
+		padding: 2em 1em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2em;
+		position: relative;
+		z-index: 2;
+		box-shadow:
+			inset 0 0 8em rgba($color: #000000, $alpha: 0.3),
+			0 0 1em rgba($color: #000000, $alpha: 0.2);
+	}
+
+
+	&__decor {
+		transition: inherit;
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		transform: translate(-50%, 6%);
+		background: $blue-gray;
+		border-radius: 1em;
+		height: 100%;
+		width: 80%;
+		z-index: 1;
+		opacity: 0.6;
+	}
+
+
+	&__smile {
+		pointer-events: none;
+		user-select: none;
+		width: 8em;
+		position: relative;
+
+		@media(max-width: $phone) {
+			width: 6em;
+		}
+	}
+
+	&__text {
+		position: relative;
+		text-align: center;
+		font-size: 18px;
+
+		@media(max-width: $phone) {
+			font-size: 16px;
+		}
+	}
+}

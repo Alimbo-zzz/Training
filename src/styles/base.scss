@@ -1,0 +1,23 @@
+* {
+	font-family: 'Inter';
+}
+
+body {
+	background: $white;
+}
+
+
+.wrapper {
+	overflow-x: hidden;
+}
+
+
+.circle-grad {
+	aspect-ratio: 1/1;
+	width: 400px;
+	background: $grad-1;
+	border-radius: 50%;
+	user-select: none;
+	pointer-events: none;
+	filter: blur(50px);
+}
